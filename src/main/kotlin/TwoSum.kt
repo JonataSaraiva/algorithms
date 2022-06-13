@@ -1,4 +1,7 @@
 /**
+Challenge name: Two Sum II
+Challenge from: Leet Code
+
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
@@ -10,7 +13,7 @@ Output: [0,1]
 Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
  **/
 
-class IndicesOfTarget {
+class TwoSum {
 
     fun twoSum(nums: IntArray, target: Int): IntArray {
         val values = nums.indices.associateBy { nums[it] }
@@ -25,13 +28,15 @@ class IndicesOfTarget {
             }
         }
 
-        return IntArray(0)
+        return intArrayOf()
     }
 
 }
 
 fun main() {
-    val twoSum = IndicesOfTarget().twoSum(intArrayOf(3,3), 6)
+    val twoSum = TwoSum().twoSum(intArrayOf(2,7,11,15), 9)
+
     println(twoSum.toSet())
+    println("Expected result: ${twoSum.contentEquals(intArrayOf(0,1))}")
 }
 
