@@ -16,7 +16,6 @@ Explanation: There is no common prefix among the input strings.
 **/
 class LongestCommonPrefix {
     fun verify(words: Array<String>): String {
-        words.sortBy { it.length } // improvement to avoid unnecessary iterates
         val token = words.first()
 
         for (i in token.length downTo 0){
@@ -33,5 +32,6 @@ class LongestCommonPrefix {
 
 fun main() {
     val prefix = LongestCommonPrefix().verify(arrayOf("flower", "flow", "flight"))
-    println(prefix)
+    println("Result: $prefix")
+    println("Expected result: ${prefix == "fl"}")
 }
